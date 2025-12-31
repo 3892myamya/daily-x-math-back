@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y \
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# sqlite
-RUN mkdir -p database && touch database/database.sqlite && chmod -R 777 database
-
 WORKDIR /app
 COPY . .
+
+# sqlite
+RUN mkdir -p database && touch database/database.sqlite && chmod -R 777 database
 
 # Laravel の必要フォルダに書き込み権限を付与
 RUN chmod -R 777 storage bootstrap/cache
