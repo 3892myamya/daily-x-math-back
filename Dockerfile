@@ -3,6 +3,7 @@ FROM php:8.3-cli
 # 必要な拡張
 RUN apt-get update && apt-get install -y \
     git unzip zip libzip-dev \
+    sqlite3 libsqlite3-dev \
     && docker-php-ext-install zip pdo pdo_sqlite
 
 # Composer
