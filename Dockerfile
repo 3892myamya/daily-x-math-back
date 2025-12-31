@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY database/database.sqlite database/database.sqlite
 
 WORKDIR /app
 COPY . .
