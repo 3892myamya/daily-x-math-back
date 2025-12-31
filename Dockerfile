@@ -21,5 +21,8 @@ RUN chmod -R 777 storage bootstrap/cache
 # Composer install
 RUN composer install --no-dev --optimize-autoloader
 
+# migrate
+RUN php artisan migrate --force
+
 # CMD
 CMD php artisan serve --host=0.0.0.0 --port=${PORT}
