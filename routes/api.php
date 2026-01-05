@@ -10,4 +10,7 @@ use App\Http\Controllers\QuestionController;
 
 Route::get('/question', [QuestionController::class, 'getQuestion']);
 Route::get('/answer', [QuestionController::class, 'getAnswer']);
+Route::get('/health', function () {
+    return response()->noContent(); // 200 OK
+});
 // Route::get('/test', [QuestionController::class, 'solveTest']);
